@@ -11,9 +11,67 @@
 		2DBCBCA82DE3A748001D3425 /* Lobby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lobby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2D4665FB2DF8B75200DA1940 /* Exceptions for "LobbyOS" folder in "Lobby" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Package.swift,
+				sparkle/bin/BinaryDelta,
+				sparkle/bin/generate_appcast,
+				sparkle/bin/generate_keys,
+				sparkle/bin/old_dsa_scripts/sign_update,
+				sparkle/bin/sign_update,
+				sparkle/CHANGELOG,
+				sparkle/INSTALL,
+				sparkle/LICENSE,
+				sparkle/SampleAppcast.xml,
+				"sparkle/Sparkle Test App.app",
+				sparkle/sparkle.app,
+				sparkle/sparkle/bin/BinaryDelta,
+				sparkle/sparkle/bin/generate_appcast,
+				sparkle/sparkle/bin/generate_keys,
+				sparkle/sparkle/bin/old_dsa_scripts/sign_update,
+				sparkle/sparkle/bin/sign_update,
+				sparkle/sparkle/CHANGELOG,
+				sparkle/sparkle/INSTALL,
+				sparkle/sparkle/LICENSE,
+				sparkle/sparkle/SampleAppcast.xml,
+				"sparkle/sparkle/Sparkle Test App.app",
+				sparkle/sparkle/sparkle.app,
+				sparkle/sparkle/Sparkle.framework,
+				sparkle/sparkle/Symbols/Autoupdate.dSYM,
+				sparkle/sparkle/Symbols/BinaryDelta.dSYM,
+				sparkle/sparkle/Symbols/Downloader.xpc.dSYM,
+				sparkle/sparkle/Symbols/generate_appcast.dSYM,
+				sparkle/sparkle/Symbols/generate_keys.dSYM,
+				sparkle/sparkle/Symbols/Installer.xpc.dSYM,
+				sparkle/sparkle/Symbols/sign_update.dSYM,
+				"sparkle/sparkle/Symbols/Sparkle Test App.app.dSYM",
+				sparkle/sparkle/Symbols/sparkle.app.dSYM,
+				sparkle/sparkle/Symbols/Sparkle.framework.dSYM,
+				sparkle/sparkle/Symbols/Updater.app.dSYM,
+				sparkle/Symbols/Autoupdate.dSYM,
+				sparkle/Symbols/BinaryDelta.dSYM,
+				sparkle/Symbols/Downloader.xpc.dSYM,
+				sparkle/Symbols/generate_appcast.dSYM,
+				sparkle/Symbols/generate_keys.dSYM,
+				sparkle/Symbols/Installer.xpc.dSYM,
+				sparkle/Symbols/sign_update.dSYM,
+				"sparkle/Symbols/Sparkle Test App.app.dSYM",
+				sparkle/Symbols/sparkle.app.dSYM,
+				sparkle/Symbols/Sparkle.framework.dSYM,
+				sparkle/Symbols/Updater.app.dSYM,
+			);
+			target = 2DBCBCA72DE3A748001D3425 /* Lobby */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2DBCBCAA2DE3A748001D3425 /* LobbyOS */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2D4665FB2DF8B75200DA1940 /* Exceptions for "LobbyOS" folder in "Lobby" target */,
+			);
 			path = LobbyOS;
 			sourceTree = "<group>";
 		};
@@ -264,6 +322,11 @@
 				DEVELOPMENT_TEAM = 7Y9Y7R6X93;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LobbyOS/sparkle",
+					"$(PROJECT_DIR)/LobbyOS/sparkle/sparkle",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Lobby;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
@@ -299,6 +362,11 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = YES;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LobbyOS/sparkle",
+					"$(PROJECT_DIR)/LobbyOS/sparkle/sparkle",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Lobby;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
