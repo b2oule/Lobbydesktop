@@ -4,6 +4,7 @@ import AppKit
 
 struct SettingsView: View {
     @AppStorage("notificationsEnabled") private var notificationsEnabled = true
+    @AppStorage("launchAtLogin") private var launchAtLogin = false
     @State private var systemNotificationsAllowed = true
 
     var body: some View {
@@ -12,6 +13,10 @@ struct SettingsView: View {
                 Text("Enable Notifications")
             }
             .disabled(!systemNotificationsAllowed)
+            
+            Toggle(isOn: $launchAtLogin) {
+                Text("Launch at Login")
+            }
 
             if !systemNotificationsAllowed {
                 VStack(alignment: .leading, spacing: 4) {

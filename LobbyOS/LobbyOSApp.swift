@@ -3,6 +3,8 @@ import SwiftData
 import WebKit
 import UserNotifications
 import AppKit
+import ServiceManagement
+import Sparkle
 
 @main
 struct LobbyOSApp: App {
@@ -17,6 +19,9 @@ struct LobbyOSApp: App {
 
 class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDelegate, NSWindowDelegate {
     var window: NSWindow!
+    @AppStorage("launchAtLogin") private var launchAtLogin = false
+    private var updater: SPUUpdater?
+    private var driver: SPUStandardUserDriver?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         // ✅ Create the SwiftUI content
@@ -45,6 +50,64 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
                     print("[✅] Notification permission granted")
                 } else if let error = error {
                     print("[❌] Notification error: \(error)")
+                }
+            }
+        }
+        
+        // Set up auto-launch
+        setupAutoLaunch()
+        
+        // Set up Sparkle
+        setupSparkle()
+        
+        // Set up menu bar
+        setupMenuBar()
+    }
+    
+    private func setupMenuBar() {
+        let mainMenu = NSMenu()
+        
+        // App menu
+        let appMenuItem = NSMenuItem()
+        appMenuItem.submenu = NSMenu()
+        let appMenu = appMenuItem.submenu!
+        appMenu.addItem(NSMenuItem(title: "Check for Updates...", action: #selector(checkForUpdates), keyEquivalent: ""))
+        appMenu.addItem(NSMenuItem.separator())
+        appMenu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        mainMenu.addItem(appMenuItem)
+        
+        NSApplication.shared.mainMenu = mainMenu
+    }
+    
+    @objc private func checkForUpdates() {
+        updater?.checkForUpdates()
+    }
+    
+    private func setupSparkle() {
+        driver = SPUStandardUserDriver(hostBundle: Bundle.main, delegate: nil)
+        do {
+            updater = try SPUUpdater(hostBundle: Bundle.main, applicationBundle: Bundle.main, userDriver: driver!, delegate: nil)
+            try updater?.start()
+        } catch {
+            print("Failed to initialize Sparkle: \(error)")
+        }
+    }
+    
+    private func setupAutoLaunch() {
+        if launchAtLogin {
+            if SMAppService.mainApp.status != .enabled {
+                do {
+                    try SMAppService.mainApp.register()
+                } catch {
+                    print("Failed to register for auto-launch: \(error)")
+                }
+            }
+        } else {
+            if SMAppService.mainApp.status == .enabled {
+                do {
+                    try SMAppService.mainApp.unregister()
+                } catch {
+                    print("Failed to unregister from auto-launch: \(error)")
                 }
             }
         }
