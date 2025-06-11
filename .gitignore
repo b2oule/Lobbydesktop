@@ -1,0 +1,21 @@
+*.dmg
+*.tmp
+release.sh
+# Xcode/Swift/Apple build artifacts
+build/
+DerivedData/
+*.xcworkspace/
+xcuserdata/
+*.xcuserstate
+*.DS_Store
+
+# Swift Package Manager dependencies
+SourcePackages/
+.build/
+
+# Sparkle CLI/tools
+sparkle/
+
+# User/editor files
+*.swp
+*.swo
