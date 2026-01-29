@@ -6,15 +6,15 @@
     <description>Release Notes</description>
     <language>en</language>
     <item>
-      <title>Version 1.0.36</title>
-      <pubDate>Wed, 28 Jan 2026 20:51:31 +0000</pubDate>
-      <sparkle:version>1.0.36</sparkle:version>
-      <sparkle:shortVersionString>1.0.36</sparkle:shortVersionString>
+      <title>Version 1.0.37</title>
+      <pubDate>Thu, 29 Jan 2026 12:47:12 +0000</pubDate>
+      <sparkle:version>1.0.37</sparkle:version>
+      <sparkle:shortVersionString>1.0.37</sparkle:shortVersionString>
       <enclosure
-        url="https://github.com/b2oule/Lobbydesktop/releases/download/v1.0.36/Lobby-1.0.36.dmg"
-        sparkle:version="1.0.36"
-        sparkle:shortVersionString="1.0.36"
-        sparkle:edSignature="qInjHiF3CdV8ZHpckU5HbchjE8Ql52bUfAkkl4gopBNI4/cQIb9lb0lCM5MNt57TrqtupzYj1LySnWu+5IT0Bw==" length="990369"
+        url="https://github.com/b2oule/Lobbydesktop/releases/download/v1.0.37/Lobby-1.0.37.dmg"
+        sparkle:version="1.0.37"
+        sparkle:shortVersionString="1.0.37"
+        sparkle:edSignature="hVEpuw02lmLj55n7x3PCBu1u5v3JoIDpuporaUh/lJpQ97f6WQB52MRHl2OAiEu8G149ahj240jVLp3uABzwBw==" length="991746"
         type="application/octet-stream"/>
     </item>
   </channel>
